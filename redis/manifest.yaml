@@ -25,9 +25,9 @@ spec:
     component: redis
     tier: db
   ports:
-    protocol: TCP
-    port: 6379
-    targetPort: 6379
+   - protocol: TCP
+     port: 6379
+     targetPort: 6379
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -50,11 +50,11 @@ spec:
         tier: db
     spec:
       containers:
-        name: redis
-        image: redis:7.0
-        volumeMounts:
-        - name: redis
-          mountPath: /data
+       - name: redis
+         image: redis:7.0
+         volumeMounts:
+         - name: redis
+           mountPath: /data
   volumeClaimTemplates:
   - metadata:
       name: redis
