@@ -25,9 +25,9 @@ spec:
     component: rabbitmq
     tier: db
   ports:
-    protocol: TCP
-    port: 5672
-    targetPort: 5672
+    - protocol: TCP
+      port: 5672
+      targetPort: 5672
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -50,7 +50,7 @@ spec:
         tier: db
     spec:
       containers:
-        name: rabbitmq
+      - name: rabbitmq
         image: rabbitmq:3
         volumeMounts:
         - name: rabbitmq
