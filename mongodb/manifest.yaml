@@ -50,7 +50,7 @@ spec:
         tier: db
     spec:
       containers:
-        name: mongodb
+      - name: mongodb
         image: prasadsripathi/mongodb:v1
         volumeMounts:
         - name: mongodb
